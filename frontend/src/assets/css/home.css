@@ -1,0 +1,135 @@
+/* Task Form Section */
+.add-task-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-task-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 480px;
+  margin: 30px auto 20px auto;
+  background: #fff;
+  padding: 15px;
+  border-radius: 7px;
+  box-shadow: 0 1px 5px rgb(138, 137, 137);
+}
+
+.add-task-form textarea,
+input {
+  border: none;
+  padding: 4px;
+  outline: none;
+  font-size: 1.2em;
+  font-family: inherit;
+  resize: none;
+  width: 100%;
+  white-space: pre-wrap;
+}
+
+.add-task-form input {
+  font-weight: 500;
+}
+
+.add-task-form button {
+  position: absolute;
+  right: 18px;
+  bottom: -18px;
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-task-form button:hover,
+.add-task-form button:focus {
+  background: var(--secondary-color);
+}
+
+.add-btn {
+  height: 60%;
+  width: 60%;
+}
+
+/* Tasks List Section */
+
+.tasks-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.task-item-container {
+  width: auto;
+}
+
+.task-item {
+  background: #fff;
+  border-radius: 7px;
+  padding: 12px;
+  width: 240px;
+  height: 150px;
+  margin: 16px;
+  box-shadow: 0 2px 5px #ccc;
+  cursor: pointer;
+  overflow: auto;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+}
+
+.task-item:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.task-item::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+.task-item-content {
+  white-space: pre-wrap;
+  margin-top: 8px;
+}
+
+.no-tasks {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 30px 5px;
+}
+
+.no-tasks h2 {
+  margin-bottom: 15px;
+}
+
+/* Media Query for Smartphones */
+
+@media (max-width: 768px) {
+  .add-task-form {
+    width: 290px;
+  }
+
+  .tasks-list {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .task-item {
+    width: 240px;
+    height: 150px;
+  }
+}

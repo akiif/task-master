@@ -1,0 +1,172 @@
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+}
+
+.task-modal {
+  position: relative;
+  background: #eee;
+  width: 40vw;
+  padding: 2rem 1rem;
+  text-align: center;
+  border-radius: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+}
+
+.edit-task-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  padding: 5px 8px;
+  background-color: #f2f3f4;
+}
+
+.edit-task-form-title,
+.edit-task-form-content
+{
+  border: none;
+  outline: none;
+  resize: none;
+  width: 100%;
+  white-space: pre-wrap;
+  border-radius: 9px;
+  padding: 15px;
+  margin: 25px auto 20px auto;
+}
+
+.edit-task-form-title {
+  font-weight: 500;
+}
+
+.edit-task-form-title + .edit-task-form-content {
+  margin-top: 0px;
+}
+
+.edit-task-form-content {
+  height: 220px;
+}
+
+.modal-top-btn-container {
+  position: relative;
+  top: -18px;
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.modal-title {
+  margin-left: 10px;
+}
+
+.close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  border: none;
+  margin-left: auto;
+}
+
+.close-btn img {
+  width: 100%;
+  height: 100%;
+}
+
+.modal-bottom-btn-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, .4);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.edit-task-form-btn {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 11px;
+  border-radius: 9px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.edit-task-form-btn:hover,
+.edit-task-form-btn:focus {
+  background-color: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.edit-task-form-img {
+  width: 30px;
+  height: 30px;
+}
+
+.edit-task-form-btn p {
+  margin-left: 5px;
+  text-align: right;
+  font-weight: 200;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+.date-container {
+  display: flex;
+  width: 100%;
+  padding: 2px 5px;
+  margin-bottom: 15px;
+}
+
+.created-date {
+  margin-right: auto;
+}
+
+.task-date {
+  font-size: .75rem;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+/* Media Query for Smartphones */
+
+@media (max-width: 768px) {
+  .task-modal {
+    width: 85vw;
+  }
+
+  .edit-task-form {
+    width: 250px;
+  }
+  .date-container {
+    padding: 2px 4px;
+  }
+  
+  .task-date {
+    font-size: 10px;
+    padding: 2.5px;
+  }
+}

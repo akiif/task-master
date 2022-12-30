@@ -1,0 +1,17 @@
+{
+  "name": "task-master",
+  "version": "1.0.0",
+  "description": "A to-do list app with separate list for each users and  OAuth Login options.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "cd backend && npm run dev",
+    "client": "cd frontend && npm run dev -- --host",
+    "start": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "author": "Akif Mohammed",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}

@@ -1,0 +1,4 @@
+{
+  "SERVER_URL": "http://localhost:3005",
+  "CLIENT_URL": "http://localhost:5173"
+}
