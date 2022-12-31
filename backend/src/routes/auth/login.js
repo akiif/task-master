@@ -46,9 +46,16 @@ router.post("/login", (req, res, next) => {
             isLoggedIn: false
           });
         }
-        res.status(200).json({
-          isLoggedIn: true
-        });
+        if (req.isAuthenticated()) {
+          res.status(200).json({
+            isLoggedIn: true
+          });
+        } else {
+          res.status(401).json({
+            errorMessage: "Unable to Login",
+            isLoggedIn: false
+          });
+        }
       });
     }
   })(req,res,next);

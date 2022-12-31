@@ -12,8 +12,7 @@ const initialState = {
 export const checkIsLoggedIn = createAsyncThunk('auth/checkIsLoggedIn', async () => {
   return await 
     axiosRequest.get('/auth/check-logged-in')  
-      .then((res) => res.data)
-      .catch((err) => console.log(err))
+      .then((res) => res.data);
 });
 
 const authSlice = createSlice({

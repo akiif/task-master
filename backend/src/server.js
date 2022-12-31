@@ -3,8 +3,9 @@ const express = require("express");
 const connectDB = require('./config/db.config');
 const cors = require("cors");
 const session = require('express-session');
-const cookieParser = require('cookie-parser');
+const MongoStore = require('connect-mongo');
 const passport = require('passport');
+const mongoose = require('mongoose');
 
 // import routes
 const users = require('./routes/api/user');
@@ -29,12 +30,26 @@ const User = require("./models/User");
 
 const app = express();
 
+// Connect Database
+const clientPromise = connectDB();
+
+app.set('trust proxy', 1);
+
 // Configure Sessions Middleware
 app.use(session({
   secret: process.env.SESSION_KEY,
-  resave: true,
-  saveUninitialized: true,
-  cookie: { maxAge: 60 * 60 * 1000 } // 1 hour
+  resave: false,  //don't save session if unmodified
+  saveUninitialized: false,  // don't create session until something stored
+  cookie: {
+    // sameSite: 'none',
+    // secure: true, 
+    maxAge: 2 * 60 * 60 * 1000    // 2 hour
+  }, 
+  store: MongoStore.create({
+    clientPromise: clientPromise,
+    // ttl: 7 * 24 * 60 * 60, // 7 days
+    autoRemove: 'native'
+  })
 }));
 
 // Configure Middleware
@@ -46,7 +61,6 @@ app.use(express.json());
 app.use(express.urlencoded({
   extended: true
 }));
-app.use(cookieParser(process.env.SESSION_KEY));
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -65,8 +79,6 @@ require('./config/passportTwitter.config')(passport);
 // Passport GitHub Strategy
 require('./config/passportGitHub.config')(passport);
 
-// Connect Database
-connectDB();
 
 // configure routes
 app.use('/api/users', users);
@@ -79,6 +91,7 @@ app.use('/auth', googleAuth);
 app.use('/auth', facebookAuth);
 app.use('/auth', twitterAuth);
 app.use('/auth', githubAuth);
+app.use((req, res, next) => {res.status(404).json({error: "No page found!"})});
 
 let port = process.env.PORT;
 

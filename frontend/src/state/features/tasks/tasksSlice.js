@@ -6,14 +6,14 @@ import axiosRequest from "../../../api/user.api";
 const initialState = {
   tasks: [],
   isLoading: true,
-  taskListUpdated: false
+  taskListUpdated: false,
+  userIsLoggedIn: false
 }
 
 export const fetchTasks = createAsyncThunk('tasks/fetchTasks', async () => {
   return await
     axiosRequest.get('/api/tasks')
       .then((res) => res.data)
-      .catch(err => console.log(err))
 });
 
 const tasksSlice = createSlice({
@@ -26,6 +26,9 @@ const tasksSlice = createSlice({
     },
     setTaskListUpdated: (state, { payload }) => {
       state.taskListUpdated = payload;
+    },
+    setUserIsLoggedIn: (state, {payload}) => {
+      state.userIsLoggedIn = payload;
     }
   },
   extraReducers: (builder) => {
@@ -37,14 +40,16 @@ const tasksSlice = createSlice({
       .addCase(fetchTasks.fulfilled, (state, action) => {
         state.isLoading = false;
         state.tasks = action.payload ? action.payload : [];
+        state.userIsLoggedIn = true;
       })
       .addCase(fetchTasks.rejected, (state) => {
         state.isLoading = false;
         state.tasks = [];
+        state.userIsLoggedIn = false;
       });
   }
 });
 
-export const { clearTasks, setTaskListUpdated } = tasksSlice.actions;
+export const { clearTasks, setTaskListUpdated, setUserIsLoggedIn } = tasksSlice.actions;
 
 export default tasksSlice.reducer;

@@ -12,8 +12,10 @@ mongoose.set('strictQuery', true);
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(url);
-    console.log("MongoDB is Connected...");
+    return await mongoose.connect(url).then((mongoConnection) => {
+      console.log("MongoDB is Connected...");
+      return mongoConnection.connection.getClient();
+    }); 
   } catch (err) {
     console.error(err.message);
     process.exit(1);

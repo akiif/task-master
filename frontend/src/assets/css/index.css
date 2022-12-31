@@ -20,7 +20,7 @@ html {
   height: 100%;
   font-family: 'Montserrat', sans-serif;
   background: var(--background-color);
-  background-image: url("./images/cubes.png");
+  background-image: url("/images/cubes.png");
 }
 
 #root {

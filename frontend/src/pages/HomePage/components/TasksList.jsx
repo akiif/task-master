@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
+import { Navigate } from 'react-router-dom';
 
 // import asyncThunk and redux actions
 import { fetchTasks, setTaskListUpdated } from '../../../state/features/tasks/tasksSlice';
@@ -9,7 +10,7 @@ import LoadingScreen from '../../../components/LoadingScreen';
 import TaskItem from './TaskItem';
 
 function TasksList() {
-  const { tasks, isLoading, taskListUpdated } = useSelector((state) => state.tasks);
+  const { tasks, isLoading, taskListUpdated, userIsLoggedIn } = useSelector((state) => state.tasks);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -21,6 +22,10 @@ function TasksList() {
 
   if (isLoading) {
     return <LoadingScreen />
+  }
+
+  if (!userIsLoggedIn) {
+    return <Navigate to="/login" />
   }
 
   if (tasks.length === 0) {
