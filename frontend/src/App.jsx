@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { Routes, Route } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import "./assets/css/form.css"
+import "./assets/css/dark-mode.css";
 
 // import utils
 import PrivateRoutes from './utils/PrivateRoutes';
@@ -20,6 +21,7 @@ import ToastWrapper from './components/ToastWrapper';
 
 function App() {
   const { isLoading } = useSelector((state) => state.auth);
+  const { theme } = useSelector((state) => state.theme);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -33,7 +35,7 @@ function App() {
   }
   
   return (
-    <div className="App">
+    <div className={`App ${theme === "dark" && "dark"}`} >
       <ToastWrapper />
       <Routes>
         <Route element={<PrivateRoutes />} >

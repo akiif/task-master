@@ -18,7 +18,7 @@ function Register() {
         <SocialAuth />
         or register with an email
         <LocalRegisterForm />
-        <p className="redirect-form">Already have an account?
+        <p className="redirect-form">Already have an account? &nbsp;
           <Link to='/login' className='redirect-form-link'>Login</Link>
         </p>
       </div>

@@ -28,8 +28,18 @@
   margin-right: 4px;
 }
 
-.logout-btn {
+.navbar-elements {
   margin-left: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.theme-switch {
+  margin-right: 10px;
+}
+
+.logout-btn {
   background-color: var(--secondary-color);  /* 4913f5 7E6C6C 565656 */
   border: 1px solid var(--secondary-color);
   cursor: pointer;
@@ -39,7 +49,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5px 20px;
+  padding: 9px 20px;
   border-radius: 5rem;
 }
 

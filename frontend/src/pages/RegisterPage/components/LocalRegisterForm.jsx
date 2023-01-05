@@ -74,6 +74,7 @@ function LocalRegisterForm() {
         placeholder="Username"
         value={registerUsername}
         onChange={(e) => setRegisterUsername(e.target.value)} 
+        spellCheck={false} 
       />
       <p className='form-error-field'>{errors.username}</p>
       <FormPasswordField

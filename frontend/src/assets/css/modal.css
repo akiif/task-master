@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background: var(--modal-container);
   z-index: 10;
   display: flex;
   flex-direction: column;
@@ -15,7 +15,7 @@
 
 .task-modal {
   position: relative;
-  background: #eee;
+  background: var(--background-color);
   width: 40vw;
   padding: 2rem 1rem;
   text-align: center;
@@ -35,7 +35,10 @@
   align-items: center;
   width: 500px;
   padding: 5px 8px;
-  background-color: #f2f3f4;
+  background-color: var(--edit-task-form);
+  color: var(--text-color);
+  border-radius: 5px;
+  padding-bottom: 12px;
 }
 
 .edit-task-form-title,
@@ -49,6 +52,8 @@
   border-radius: 9px;
   padding: 15px;
   margin: 25px auto 20px auto;
+  background: var(--secondary-background-color);
+  color: inherit;
 }
 
 .edit-task-form-title {
@@ -85,6 +90,7 @@
   cursor: pointer;
   border: none;
   margin-left: auto;
+  background: inherit;
 }
 
 .close-btn img {
@@ -97,7 +103,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: rgba(255, 255, 255, .4);
+  background-color: var(--modal-bottom-btn-container);
   padding: 10px;
   border-radius: 5px;
 }
@@ -149,6 +155,7 @@
   padding: 5px;
   border-radius: 5px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  background-color: var(--modal-bottom-btn-container);
 }
 
 /* Media Query for Smartphones */

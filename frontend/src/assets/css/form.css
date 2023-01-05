@@ -36,8 +36,15 @@
   border-radius: 10px;
   font-size: 16px;
   box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  background-color: var(--clr-white);
 }
 
+.form-input:-webkit-autofill,
+.form-input:-webkit-autofill:hover,
+.form-input:-webkit-autofill:focus,
+.form-input:-webkit-autofill:active {
+  -webkit-text-fill-color: var(--clr-black);
+}
 
 .form-input:focus {
   outline: 2px solid #3D94F6;
@@ -180,7 +187,7 @@
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background-color: #fff;
+  background-color: var(--clr-white);
   margin-right: 10px;
   animation: ball .5s ease infinite alternate;
 }

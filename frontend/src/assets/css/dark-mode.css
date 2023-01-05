@@ -1,0 +1,14 @@
+.dark {
+  --primary-color: #2F3C7E; /* f5ba13 2F3C7E 645cff */
+  --secondary-color: #352f7e;
+  --hover-color: #3b83bd;
+  --secondary-background-color: #1f1f1f;
+  --background-color: #282828;
+  --text-color: #fff;
+  --modal-container: rgba(0, 0, 0, 0.836);
+  --edit-task-form: #181818;
+  --modal-bottom-btn-container: rgba(255, 255, 255, 0.031);
+  --main-form-input: #1f1f1f;
+  --auto-fill-color: rgb(37, 39, 43);
+  --add-task-form-box: rgb(70, 69, 69);
+}

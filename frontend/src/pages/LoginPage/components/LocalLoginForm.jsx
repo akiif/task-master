@@ -58,7 +58,6 @@ function LocalLoginForm() {
           toast.error("Server down! Please Try again later!");
         } else {
           err.response.data && setErrors(err.response.data);
-          toast.error("Unable to login. Please Try again!");
         }
         setLoading(false);
       });
@@ -75,7 +74,8 @@ function LocalLoginForm() {
         placeholder="Username"
         value={loginUsername}
         onChange={(e) => setLoginUsername(e.target.value)}
-        autoFocus 
+        autoFocus
+        spellCheck={false} 
       />
       <p className='form-error-field'>{errors.userError}</p>
       <FormPasswordField
