@@ -5,9 +5,9 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "cd backend && npm run dev",
-    "client": "cd frontend && npm run dev -- --host",
-    "start": "concurrently \"npm run server\" \"npm run client\""
+    "server": "cd backend && yarn dev",
+    "client": "cd frontend && yarn dev --host",
+    "start": "concurrently \"yarn server\" \"yarn client\""
   },
   "author": "Akif Mohammed",
   "license": "ISC",

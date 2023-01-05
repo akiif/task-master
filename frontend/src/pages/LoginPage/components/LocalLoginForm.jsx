@@ -54,7 +54,12 @@ function LocalLoginForm() {
       setLoading(false);
     })
       .catch((err) => {
-        err.response.data && setErrors(err.response.data);
+        if (err.code === "ERR_NETWORK") {
+          toast.error("Server down! Please Try again later!");
+        } else {
+          err.response.data && setErrors(err.response.data);
+          toast.error("Unable to login. Please Try again!");
+        }
         setLoading(false);
       });
   }

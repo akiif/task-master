@@ -1,6 +1,6 @@
 # task-master
 
-> A MERN stack To do list app with separate list for each user.
+> A MERN stack to-do list app with separate list for each user.
 > Features OAuth login with Google, Facebook, GitHub and Twitter as well as local authentication.
 > Live demo [_here_](https://task-masterr.github.io).
 
@@ -35,20 +35,20 @@ It features OAuth login with Google, Facebook, Github and Twitter as well as loc
 
 To run this project:
 
--   Make sure you have [NodeJs](https://nodejs.org/en/) installed in your system.
--   Then, Install it locally using npm:
+-   Make sure you have [NodeJs](https://nodejs.org/en/) and [yarn](https://yarnpkg.com/) installed in your system.
+-   Then, Install it locally using yarn:
 -   Open Two Terminals:
 -   In the first terminal:
 ```
 $ cd backend
-$ npm install
-$ npm start   # or 'npm run dev' if you have nodemon.
+$ yarn
+$ yarn start   # or 'yarn dev' if you have nodemon.
 ```
 -   In the second terminal:
 ```
 $ cd frontend
-$ npm install
-$ npm run dev
+$ yarn
+$ yarn dev
 ```
 -   You need to create a .env file and add the following keys:
     - ADMIN_KEY (any random string)
