@@ -72,6 +72,8 @@ input {
   display: flex;
   flex-wrap: wrap;
   padding: 10px;
+  background-color: var(--background-color);
+  background-image: url("/images/cubes.png");
 }
 
 .task-item-container {
