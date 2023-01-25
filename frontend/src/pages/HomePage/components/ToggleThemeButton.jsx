@@ -5,15 +5,14 @@ import "../../../assets/css/theme-switch.css";
 // import Material UI components
 import Tooltip from '@mui/material/Tooltip';
 
-// import redux actions
-import { toggleTheme } from "../../../state/features/theme/themeSlice";
+// import contexts 
+import { useTheme } from '../../../contexts/ThemeProvider';
 
 function ToggleThemeButton() {
-  const { theme } = useSelector((state) => state.theme);
-  const dispatch = useDispatch();
+  const { theme, toggleTheme } = useTheme();
 
   const handleOnClick = () => {
-    dispatch(toggleTheme());
+    toggleTheme();
   }
 
   return (

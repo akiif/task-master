@@ -11,6 +11,9 @@ import PrivateRoutes from './utils/PrivateRoutes';
 // import asyncThunk
 import { checkIsLoggedIn } from "./state/features/auth/authSlice";
 
+// import contexts
+import { useTheme } from './contexts/ThemeProvider';
+
 // import Pages
 import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
@@ -21,7 +24,7 @@ import ToastWrapper from './components/ToastWrapper';
 
 function App() {
   const { isLoading } = useSelector((state) => state.auth);
-  const { theme } = useSelector((state) => state.theme);
+  const { theme } = useTheme();
   const dispatch = useDispatch();
 
   useEffect(() => {
